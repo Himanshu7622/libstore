@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 import { libraryDB, Book, DashboardStats } from '@/lib/db';
 
 export default function LibraryManagementApp() {

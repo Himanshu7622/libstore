@@ -111,7 +111,7 @@ class LibraryDB {
       const request = store.getAll();
 
       request.onsuccess = () => {
-        const books = request.result.map((book: any) => ({
+        const books = request.result.map((book: Book & { createdAt: string; updatedAt: string }) => ({
           ...book,
           createdAt: new Date(book.createdAt),
           updatedAt: new Date(book.updatedAt),

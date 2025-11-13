@@ -189,7 +189,6 @@ class LibraryDB {
 
   // Search books by title or author
   async searchBooks(query: string): Promise<Book[]> {
-    const db = await this.getDB();
     const allBooks = await this.getAllBooks();
 
     if (!query.trim()) {
@@ -205,7 +204,6 @@ class LibraryDB {
 
   // Filter books by category or status
   async filterBooks(field: 'category' | 'status', value: string): Promise<Book[]> {
-    const db = await this.getDB();
     const allBooks = await this.getAllBooks();
 
     if (value === 'all') {

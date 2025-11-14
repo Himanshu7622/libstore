@@ -55,6 +55,22 @@ export default function AdvancedLibraryManagementApp() {
   useEffect(() => {
     initializeApp();
 
+    // Set initial time
+    setCurrentTime(new Date().toLocaleTimeString('en-US', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit'
+    }));
+
+    // Update time every second
+    const timeInterval = setInterval(() => {
+      setCurrentTime(new Date().toLocaleTimeString('en-US', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      }));
+    }, 1000);
+
     // Update overdue status periodically
     const interval = setInterval(async () => {
       try {
@@ -65,7 +81,10 @@ export default function AdvancedLibraryManagementApp() {
       }
     }, 60000); // Check every minute
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      clearInterval(timeInterval);
+    };
   }, []);
 
   // Show notification helper

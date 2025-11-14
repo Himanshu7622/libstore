@@ -11,7 +11,6 @@ interface SettingsProps {
   onBooksChange: () => void;
   onMembersChange: () => void;
   onIssuesChange: () => void;
-  onSettingsChange: () => void;
   showNotification: (type: 'success' | 'error' | 'warning' | 'info', message: string) => void;
 }
 

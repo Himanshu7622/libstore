@@ -49,6 +49,7 @@ export default function AdvancedLibraryManagementApp() {
     maxBooksPerMember: 3,
     updatedAt: new Date()
   });
+  const [currentTime, setCurrentTime] = useState<string>('');
 
   // Initialize application
   useEffect(() => {

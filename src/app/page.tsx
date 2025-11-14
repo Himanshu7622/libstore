@@ -260,7 +260,14 @@ export default function AdvancedLibraryManagementApp() {
                 showNotification('error', 'Failed to import data');
               }
             }}
-            {...commonProps}
+            books={books}
+            members={members}
+            issues={issues}
+            onBooksChange={onBooksChange}
+            onMembersChange={onMembersChange}
+            onIssuesChange={onIssuesChange}
+            onSettingsChange={onSettingsChange}
+            showNotification={showNotification}
           />
         );
       default:

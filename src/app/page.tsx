@@ -263,11 +263,11 @@ export default function AdvancedLibraryManagementApp() {
             books={books}
             members={members}
             issues={issues}
-            onBooksChange={onBooksChange}
-            onMembersChange={onMembersChange}
-            onIssuesChange={onIssuesChange}
-            onSettingsChange={onSettingsChange}
-            showNotification={showNotification}
+            onBooksChange={commonProps.onBooksChange}
+            onMembersChange={commonProps.onMembersChange}
+            onIssuesChange={commonProps.onIssuesChange}
+            onSettingsChange={commonProps.onSettingsChange}
+            showNotification={commonProps.showNotification}
           />
         );
       default:

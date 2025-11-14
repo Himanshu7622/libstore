@@ -345,7 +345,7 @@ export default function AdvancedLibraryManagementApp() {
                 </svg>
               </button>
               <div className="text-sm text-gray-500">
-                Last updated: {new Date().toLocaleTimeString()}
+                Last updated: {currentTime}
               </div>
             </div>
           </div>

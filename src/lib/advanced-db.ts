@@ -491,7 +491,20 @@ class AdvancedLibraryDB {
     dueDate?: Date;
   }): Promise<Issue> {
     const db = await this.getDB();
-    const settings = await this.getSettings();
+    let settings = await this.getSettings();
+
+    // Use default settings if null
+    if (!settings) {
+      settings = {
+        id: 'default',
+        defaultLoanDuration: 14,
+        theme: 'light',
+        autoNotifications: false,
+        finePerDay: 1,
+        maxBooksPerMember: 3,
+        updatedAt: new Date()
+      };
+    }
 
     // Validate book and member exist
     const book = await this.getBookById(issueData.bookId);
